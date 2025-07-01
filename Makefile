@@ -1,4 +1,10 @@
 default_goal: run
 
 run:
-	go run .
+	@docker-compose -f config/compose.yml up -d
+
+stop:
+	@docker-compose -f config/config.yml down --remove-orphans
+
+dev:
+	@go run .
